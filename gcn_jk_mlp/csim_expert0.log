@@ -1,0 +1,75 @@
+
+****** vitis-run v2025.1 (64-bit)
+  **** SW Build 6137779 on 2025-05-21-18:10:03
+  **** Start of session at: Thu Oct 29 01:44:42 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+WARNING: [vitis-run 60-2507] Dispatch failed to load the system diagram library librdi_system_diagram. Diagrams will not be produced.
+  **** HLS Build v2025.1 6135595
+INFO: [HLS 200-2005] Using work_dir /home/rizwanpathan/fpga_accel/vitis_workspace/gcn_jk_mlp 
+INFO: [HLS 200-2006] Changing directory to /home/rizwanpathan/fpga_accel/vitis_workspace
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/rizwanpathan/fpga_accel/vitis_workspace/gcn_jk_mlp/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component '/home/rizwanpathan/fpga_accel/vitis_workspace/gcn_jk_mlp'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=/home/rizwanpathan/gcn_jk_mlp/model.cpp' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/rizwanpathan/gcn_jk_mlp/model.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.file=/home/rizwanpathan/gcn_jk_mlp/pragma_mlp.cpp' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/rizwanpathan/gcn_jk_mlp/pragma_mlp.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=/home/rizwanpathan/gcn_jk_mlp/model_tb.cpp' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(21)
+INFO: [HLS 200-10] Adding test bench file '/home/rizwanpathan/gcn_jk_mlp/model_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=/home/rizwanpathan/gcn_jk_mlp/tb_data' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(22)
+INFO: [HLS 200-10] Adding test bench file '/home/rizwanpathan/gcn_jk_mlp/tb_data' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=HMoE_GCN_JK_PragmaMLP_top' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(18)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vitis' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(15)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2025.1%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying config ini 'part=xcu250-figd2104-2L-e' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(12)
+INFO: [HLS 200-1611] Setting target device to 'xcu250-figd2104-2L-e'
+INFO: [HLS 200-1465] Applying config ini 'clock=3.33ns' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(23)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from /home/rizwanpathan/gcn_jk_mlp/hls_config.cfg(16)
+INFO: [HLS 200-2176] Writing Vitis IDE component file /home/rizwanpathan/fpga_accel/vitis_workspace/gcn_jk_mlp/vitis-comp.json
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../gcn_jk_mlp/model_tb.cpp in debug mode
+   Compiling ../../../../../../gcn_jk_mlp/pragma_mlp.cpp in debug mode
+   Compiling ../../../../../../gcn_jk_mlp/model.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../../../gcn_jk_mlp/model_tb.cpp:27:
+../../../../../../gcn_jk_mlp/model.h:14:13: warning: Floating point model [-W#pragma-messages]
+    #pragma message("Floating point model")
+            ^
+1 warning generated.
+In file included from ../../../../../../gcn_jk_mlp/model.cpp:1:
+../../../../../../gcn_jk_mlp/model.h:14:13: warning: Floating point model [-W#pragma-messages]
+    #pragma message("Floating point model")
+            ^
+1 warning generated.
+graph       : N = 555, E = 1965, expert = 0
+scope nodes : 8
+running kernel ...
+
+--- stage 1  JK embeddings: kernel vs PyTorch -----------------
+compared    : 555 nodes x 64 dims = 35520 values
+MAE         : 1.844931e-08
+max |err|   : 1.907349e-06   at node 41, dim 0
+
+--- stage 2  pragma MLP output: kernel vs PyTorch --------------
+all nodes   : MAE 3.908512e-08   max |err| 9.536743e-06 at node 538, dim 53
+scope nodes : MAE 1.550462e-06   max |err| 9.536743e-06 at node 538, dim 53
+              kernel 9.553607   golden 9.553617
+non-scope   : 0 of 547 rows differ from the JK output (expect 0)
+
+RESULT: PASS  (stage 1 and stage 2 MAE < 1e-04)
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 2.16 seconds. Total CPU system time: 0.46 seconds. Total elapsed time: 2.95 seconds; peak allocated memory: 231.051 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 6s
